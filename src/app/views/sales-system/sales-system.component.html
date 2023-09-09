@@ -1,0 +1,35 @@
+<div>
+    <h2>Sales System</h2>
+    <!-- Sell Item Form -->
+    <h3>Sell Item</h3>
+    <form (submit)="sellItem()">
+      <label for="itemToSell">Select Item:</label>
+      <select id="itemToSell" [(ngModel)]="selectedItem" required>
+        <option *ngFor="let item of items" [value]="item.id">{{ item.name }}</option>
+      </select>
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" [(ngModel)]="saleQuantity" required>
+      <button type="submit">Sell</button>
+    </form>
+  
+    <!-- Restock Item Form -->
+    <h3>Restock Item</h3>
+    <form (submit)="restockItem()">
+      <label for="itemToRestock">Select Item:</label>
+      <select id="itemToRestock" [(ngModel)]="selectedRestockItem" required>
+        <option *ngFor="let item of items" [value]="item.id">{{ item.name }}</option>
+      </select>
+      <label for="restockQuantity">Quantity:</label>
+      <input type="number" id="restockQuantity" [(ngModel)]="restockQuantity" required>
+      <button type="submit">Restock</button>
+    </form>
+  
+    <!-- Search Item Form -->
+    <h3>Search Item</h3>
+    <form (submit)="searchItem()">
+      <label for="searchQuery">Search:</label>
+      <input type="text" id="searchQuery" [(ngModel)]="searchQuery" required>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  

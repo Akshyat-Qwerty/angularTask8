@@ -1,0 +1,18 @@
+<div>
+    <h2>Item Management</h2>
+    <!-- Display a list of items -->
+    <ul>
+      <li *ngFor="let item of items">{{ item.name }} (Price: {{ item.price }})</li>
+    </ul>
+  
+    <!-- Add a new item form -->
+    <h3>Add New Item</h3>
+    <form (submit)="addItem()">
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" [(ngModel)]="newItem.name" required>
+      <label for="itemPrice">Item Price:</label>
+      <input type="number" id="itemPrice" [(ngModel)]="newItem.price" required>
+      <button type="submit">Add Item</button>
+    </form>
+  </div>
+  

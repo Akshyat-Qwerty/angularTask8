@@ -1,0 +1,23 @@
+<div>
+    <h2>User Management</h2>
+    <!-- Display a list of users -->
+    <ul>
+      <li *ngFor="let user of users">{{ user.name }} (Role: {{ user.role }})</li>
+    </ul>
+  
+    <!-- Add a new user form -->
+    <h3>Add New User</h3>
+    <form (submit)="addUser()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="newUser.username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="newUser.password" required>
+      <label for="role">Role:</label>
+      <select id="role" [(ngModel)]="newUser.role" required>
+        <option value="admin">Admin</option>
+        <option value="supervisor">Supervisor</option>
+      </select>
+      <button type="submit">Add User</button>
+    </form>
+  </div>
+  

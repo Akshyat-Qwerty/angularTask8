@@ -1,0 +1,16 @@
+<div>
+    <h2>Role Management</h2>
+    <!-- Display a list of roles -->
+    <ul>
+      <li *ngFor="let role of roles">{{ role.name }}</li>
+    </ul>
+  
+    <!-- Add a new role form -->
+    <h3>Add New Role</h3>
+    <form (submit)="addRole()">
+      <label for="roleName">Role Name:</label>
+      <input type="text" id="roleName" [(ngModel)]="newRole.name" required>
+      <button type="submit">Add Role</button>
+    </form>
+  </div>
+  
